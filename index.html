@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Saku Digital: IT Support Roadmap & Solusi</title>
+    <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <h1>Buku Saku Mandiri: IT Support Knowledge Base</h1>
+    <p>Rangkuman Tugas, Logika Praktek Jaringan, Hardware, dan Strategi Wawancara Kerja</p>
+    <button id="theme-toggle">Mode Gelap</button>
+</header>
+
+<div class="container">
+
+    <!-- BAB 1 -->
+    <div class="card">
+        <h2>📋 1. Job Desk Dasar & Estimasi Gaji (Pasar Kerja)</h2>
+        <p>IT Support bertanggung jawab merawat, memperbaiki, dan memastikan seluruh infrastruktur teknologi informasi di perusahaan berjalan lancar.</p>
+        <ul>
+            <li><strong>Pemeliharaan Perangkat:</strong> Merawat dan mendiagnosis PC, Laptop, Printer, Proyektor, dan CCTV.</li>
+            <li><strong>Pengelolaan Software:</strong> Instalasi OS (Windows/Linux), pembaruan sistem, dan aplikasi produktivitas kantor.</li>
+            <li><strong>Bantuan Pengguna (Helpdesk):</strong> Menjadi garda depan penyelesaian kendala teknis karyawan, baik langsung maupun via remote.</li>
+        </ul>
+        <h3>Rata-Rata Gaji di Indonesia:</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Level Pengalaman</th>
+                    <th>Kisaran Gaji / Bulan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fresh Graduate / Entry-Level</td>
+                    <td>Rp3.000.000 - Rp5.500.000 (Menyesuaikan UMK)</td>
+                </tr>
+                <tr>
+                    <td>Mid-Level (2-5 Tahun)</td>
+                    <td>Rp5.500.000 - Rp8.500.000</td>
+                </tr>
+                <tr>
+                    <td>Senior / IT Supervisor</td>
+                    <td>Rp8.500.000 - Rp15.000.000+</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- BAB 2 -->
+    <div class="card">
+        <h2>📊 2. Administrasi IT: Inventaris & Ticketing System</h2>
+        <p>Tertib administrasi membedakan IT Support profesional dengan teknisi biasa.</p>
+        
+        <h3>A. Contoh Tabel Inventaris Aset (Format Excel)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Kode Aset</th>
+                    <th>Jenis Perangkat</th>
+                    <th>Nomor Seri (S/N)</th>
+                    <th>Nama Pengguna</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><code>AST-IT-001</code></td>
+                    <td>Laptop Asus ExpertBook</td>
+                    <td>LPN12345678X</td>
+                    <td>Budi (Marketing)</td>
+                    <td><span class="badge badge-success">Bagus</span></td>
+                </tr>
+                <tr>
+                    <td><code>AST-IT-002</code></td>
+                    <td>Monitor LG 24"</td>
+                    <td>MG600ABCDE</td>
+                    <td>Rian (Design)</td>
+                    <td><span class="badge badge-danger">Layar Bergaris</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>B. Alur Kerja Sistem Tiket (Ticketing System)</h3>
+        <p>Sistem antrean digital (Contoh: Jira, Zendesk) untuk melacak keluhan karyawan:</p>
+        <ol>
+            <li><strong>Open:</strong> User membuat tiket keluhan di aplikasi (misal: Wi-Fi terputus).</li>
+            <li><strong>In Progress:</strong> IT Support menerima tiket dan mengubah status agar user tahu masalah sedang ditangani.</li>
+            <li><strong>Resolved & Closed:</strong> Masalah diselesaikan di lapangan, IT mencatat dokumentasi solusi di sistem, lalu menutup tiket.</li>
+        </ol>
+    </div>
+
+    <!-- BAB 3 -->
+    <div class="card highlight-box">
+        <h2>🌐 3. Logika Praktis & Pemecahan Masalah Jaringan (CMD)</h2>
+        <p>Metode pelacakan mandiri menggunakan Command Prompt (CMD) yang telah dipraktikkan:</p>
+        
+        <h3>A. Perintah <code>ping</code> - Tes Koneksi Utama</h3>
+        <ul>
+            <li><code>ping 8.8.8.8</code>: Menguji jalur ke DNS server global Google. Jika mendapat <i>Reply</i>, berarti laptop terhubung internet luar.</li>
+            <li>Jika muncul <code>Request timed out</code> (RTO) sesekali, jaringan sedang tidak stabil (interferensi Wi-Fi atau beban bandwidth tinggi).</li>
+            <li>Jika <code>ping google.com</code> berhasil menerjemahkan nama domain ke IP, fungsi <strong>DNS Server</strong> berjalan normal.</li>
+        </ul>
+
+        <h3>B. Perintah <code>ipconfig</code> & <code>tracert</code></h3>
+        <ul>
+            <li><code>ipconfig</code>: Melihat IP lokal laptop dan <strong>Default Gateway</strong> (Alamat IP Router pengubung).</li>
+            <li><code>tracert google.com</code>: Melacak rute perjalanan data melewati gerbang-gerbang server (Hops). Jika RTO di awal (Hop 1), masalah ada di router lokal. Jika RTO/putus mulai di Hop 2 atau 3, masalah ada di sisi provider internet luar (ISP).</li>
+        </ul>
+
+        <div class="alert-info">
+            <strong>💡 Kunci Studi Kasus Interview Jaringan:</strong><br>
+            Jika ping google.com hasilnya RTO total, tetapi ping 192.168.1.1 (Router) hasilnya lancar, artinya <strong>Komputer user & Jaringan lokal kantor AMAN</strong>. Titik kerusakan mutlak ada pada <strong>jalur internet dari Provider (ISP) yang terputus</strong>.
+        </div>
+    </div>
+
+    <!-- BAB 4 -->
+    <div class="card card-accent">
+        <h2>🛡️ 4. SOP Keamanan Siber: Penanganan Ransomware</h2>
+        <p>Pertanyaan ini menguji kesiapan Anda melindungi aset penting perusahaan saat terjadi serangan darurat.</p>
+        <div class="interview-prompt">
+            <strong>Pertanyaan Interview:</strong> "Apa yang Anda lakukan jika komputer user mendadak terinfeksi Ransomware (.locked)?"
+        </div>
+        <p><strong>Langkah Penyelamatan Terstruktur (Jawaban Terbaik):</strong></p>
+        <ul>
+            <li><span class="step-badge">Langkah 1</span> <strong>Isolasi Jaringan Segera:</strong> Cabut kabel LAN atau matikan koneksi Wi-Fi pada laptop korban secepat mungkin. <i>Alasan:</i> Mencegah Ransomware menyebar ke komputer lain atau server utama kantor melalui jaringan lokal.</li>
+            <li><span class="step-badge">Langkah 2</span> <strong>Laporkan ke Atasan/Tim Security:</strong> Berikan eskalasi laporan guna mengantisipasi serangan siber berskala besar.</li>
+            <li><span class="step-badge">Langkah 3</span> <strong>Clean Install & Restore:</strong> Format total drive sistem (Clean Install) untuk memusnahkan virus, kemudian pulihkan data user menggunakan file cadangan (Backup) resmi terakhir perusahaan.</li>
+        </ul>
+    </div>
+
+    <!-- BAB 5 -->
+    <div class="card">
+        <h2>⚙️ 5. Troubleshooting Hardware & Install Windows Aman</h2>
+        
+        <h3>A. PC Menyala tapi Layar Hitam (No Display)</h3>
+        <p>CPU hidup, kipas berputar, tetapi monitor menampilkan pesan <i>No Signal</i>. Langkah penyelesaiannya:</p>
+        <ol>
+            <li>Matikan arus listrik komputer demi keamanan.</li>
+            <li>Buka casing CPU, cabut komponen <strong>RAM</strong> dari slotnya.</li>
+            <li><strong>Trik Utama:</strong> Bersihkan pin kuningan RAM menggunakan penghapus pensil secara perlahan untuk menghilangkan debu atau korosi ringan.</li>
+            <li>Pasang kembali dengan kokoh, lalu uji nyalakan. Jika gagal, coba pindahkan ke slot RAM yang berbeda.</li>
+        </ol>
+
+        <h3>B. Standar Prosedur (SOP) Instalasi Ulang OS Windows di Kantor</h3>
+        <ul>
+            <li><strong>Wajib Backup Data:</strong> Amankan folder data krusial user (Desktop, Documents, Downloads, Pictures) serta bookmark browser ke eksternal storage sebelum eksekusi.</li>
+            <li><strong>Gunakan Installer Resmi:</strong> Buat bootable USB menggunakan <i>Media Creation Tool</i> dari web resmi Microsoft demi menghindari malware.</li>
+            <li><strong>Fokus Format:</strong> Saat proses instalasi, hanya hapus dan format <strong>Drive C (System)</strong>. Jangan mengganggu Drive D atau E yang menyimpan data historis pekerjaan karyawan.</li>
+        </ul>
+    </div>
+
+</div>
+
+<footer>
+    <p>Semangat Berjuang, Mas Bro! Ilmu Ini Milik Anda, Siap Dibawa dan Dibaca Kapan Saja. Sukses untuk Proses Rekrutmennya!</p>
+</footer>
+
+
+</body>
+</html>
